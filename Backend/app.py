@@ -2,6 +2,8 @@ from flask import Flask, request, send_file
 from flask_cors import CORS
 import pandas as pd
 import io
+import os 
+
 
 app = Flask(__name__)
 CORS(app)
@@ -56,5 +58,7 @@ def extract_columns():
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render sets PORT automatically
+    app.run(host="0.0.0.0", port=port)
