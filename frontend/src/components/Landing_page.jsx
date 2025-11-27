@@ -22,7 +22,7 @@ function App() {
 // https://backend-16p9.onrender.com/extract
 
     try {
-      const res = await fetch("http://127.0.0.1:10000/extract", {
+      const res = await fetch("https://backend-16p9.onrender.com/extract", {
         method: "POST",
         body: formData,
       });
